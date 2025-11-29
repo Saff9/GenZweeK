@@ -1,9 +1,6 @@
 // frontend/next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    serverComponentsExternalPackages: ['@prisma/client'],
-  },
   images: {
     remotePatterns: [
       {
@@ -12,13 +9,14 @@ const nextConfig = {
       },
     ],
   },
+  // TEMPORARILY DISABLE rewrites until backend is live
   async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: `${process.env.NEXT_PUBLIC_API_BASE}/:path*`,
-      },
-    ]
+    return process.env.NEXT_PUBLIC_API_BASE 
+      ? [{
+          source: '/api/:path*',
+          destination: `${process.env.NEXT_PUBLIC_API_BASE}/:path*`,
+        }]
+      : []
   },
 }
 

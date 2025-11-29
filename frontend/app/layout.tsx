@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${inter.variable} font-sans antialiased`}>
-        <div className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950/20 to-slate-950 text-white`}>
+        <div className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950/20 to-slate-950 text-white">
           {/* Header */}
           <header className="border-b border-white/5 backdrop-blur-md sticky top-0 z-50">
             <div className="max-w-xl mx-auto px-4 py-3 flex items-center justify-between">
